@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import './styles.css'; 
 
 function Square({ value, onSquareClick }) {
   return (
@@ -77,7 +78,7 @@ export default function Game() {
     }
     return (
       <li key={move}>
-        <button onClick={() => jumpTo(move)}>{description}</button>
+        <button id='history' onClick={() => jumpTo(move)}>{description}</button>
       </li>
     );
   });
