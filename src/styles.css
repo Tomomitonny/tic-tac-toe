@@ -2,15 +2,18 @@
 body {
   font-family: 'Comic Sans MS', cursive, sans-serif;
   background-color: #f0f8ff;
-  color: #988a9a;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
   margin: 0;
-  
 }
+
+h1 {
+  color: #988a9a;
+}
+
 #root {
   display: flex;
 }
@@ -34,6 +37,7 @@ body {
 .square {
   width: 100px;
   height: 100px;
+  color: #988a9a;
   background-color: #fff0f5;
   border: 2px solid #ff69b4;
   font-size: 32px;
@@ -60,13 +64,12 @@ button {
   border-radius: 16px;
 }
 #history {
-  color: #fff;
+  color: #f0f8ff;
   border-radius: 5px;
 }
 
 button:hover {
   background-color: #ff1493;
-  color: #f0f8ff;
 }
 
 .controls {
