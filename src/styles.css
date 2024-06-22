@@ -68,13 +68,15 @@ button:hover {
   background-color: #ff1493;
 }
 
+.controls {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
 .game-info {
   
   margin-top: 20px;
 }
 
-ol {
 
-  margin-left: 20px;
-  padding-left: 20px;
-}

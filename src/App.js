@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './styles.css'; 
+import './styles.css'; // 既存のCSSインポート
 
 function Square({ value, onSquareClick }) {
   return (
@@ -69,19 +69,22 @@ export default function Game() {
     setCurrentMove(nextMove);
   }
 
-  const moves = history.map((squares, move) => {
-    let description;
-    if (move > 0) {
-      description = 'Go to move #' + move;
-    } else {
-      description = 'Go to game start';
+  function handleRestart() {
+    setHistory([Array(9).fill(null)]);
+    setCurrentMove(0);
+  }
+
+  function handleBack() {
+    if (currentMove > 0) {
+      setCurrentMove(currentMove - 1);
     }
-    return (
-      <li key={move}>
-        <button id='history' onClick={() => jumpTo(move)}>{description}</button>
-      </li>
-    );
-  });
+  }
+
+  function handleForward() {
+    if (currentMove < history.length - 1) {
+      setCurrentMove(currentMove + 1);
+    }
+  }
 
   return (
     <div className="game">
@@ -89,7 +92,12 @@ export default function Game() {
         <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
       </div>
       <div className="game-info">
-        <ol>{moves}</ol>
+        <div className="controls">
+          <button onClick={handleRestart}>最初から始める</button>
+          <button onClick={handleBack}>戻る</button>
+          <button onClick={handleForward}>進む</button>
+        </div>
+        <ol>{/* 空のリストにしてhistoryは表示しないようにする */}</ol>
       </div>
     </div>
   );
