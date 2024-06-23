@@ -92,8 +92,8 @@ export default function Game() {
         <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
       </div>
       <div className="game-info">
-        <div className="controls">
           <button onClick={handleRestart}>最初から始める</button>
+        <div className="controls">
           <button onClick={handleBack}>戻る</button>
           <button onClick={handleForward}>進む</button>
         </div>
